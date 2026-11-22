@@ -1,0 +1,14 @@
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "B", "UP", "C90", "ERA", "ARG", "PLR2004", "T20"]
+
+[tool.ruff.lint.per-file-ignores]
+# En las pruebas los valores esperados escritos a mano son la propia verificación.
+"tests/*" = ["PLR2004"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=app --cov-report=term-missing --cov-fail-under=80"
